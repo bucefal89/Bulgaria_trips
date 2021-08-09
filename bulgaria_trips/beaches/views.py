@@ -22,6 +22,7 @@ def create_beaches(request):
         if form.is_valid():
             beach = form.save(commit=False)
             beach.user = request.user
+            beach.source = request.user
             beach.save()
             return redirect('all beaches')
     else:
@@ -36,6 +37,16 @@ def create_beaches(request):
 
 def update_beaches(request, pk):
     pass
+
+
+def details_beaches(request, pk):
+    pass
+    # beach = Beach.objects.get(pk)
+    # context = {
+    #     'beaches': beach,
+    # }
+    #
+    # return render(request, 'beaches/details-beaches.html', context)
 
 
 def delete_beaches(request, pk):

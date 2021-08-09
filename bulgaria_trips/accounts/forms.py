@@ -1,7 +1,11 @@
 from django import forms
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, get_user_model
+from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 from bulgaria_trips.core.forms import BootstrapFormMixin
+
+
+UserModel = get_user_model()
 
 
 class SignInForm(BootstrapFormMixin, forms.Form):
@@ -23,3 +27,9 @@ class SignInForm(BootstrapFormMixin, forms.Form):
 
     def save(self):
         return self.user
+
+
+class SignUpForm(BootstrapFormMixin, UserCreationForm):
+    class Meta:
+        model = UserModel
+        fields = ('email',)
