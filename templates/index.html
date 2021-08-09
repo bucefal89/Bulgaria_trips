@@ -1,0 +1,45 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container">
+         <div class="jumbotron parent">
+            <div class="absolute">
+                <h1 class="display-4">WILLKOMMEN in Bulgarien</h1>
+            </div>
+
+            <img style="width: 100%" src="{% static 'images/background/shutterstock.jpg' %}" alt="">
+            <div class="absolute">
+                <br>
+                    <h4>Bulgarien ist eines der ältesten Länder Europas. Es ist auch das einzige Land, das seinen Namen
+                        seit seiner Gründung im Jahr 681 nie geändert hat.</h4>
+                </br>
+                <div class="box">
+                    <a href="{% url 'facts' %}" class="btn btn-primary mt-2">Erfahre mehr!</a>
+                </div>
+{#               <hr class="my-4">#}
+{#                {% if not request.user.is_authenticated %}#}
+{#                    <div class="inner cover">#}
+{#                        <h1 class="cover-heading"></h1>#}
+{#                        <div class="row">#}
+{#                            <div class="col-lg-6">#}
+{#                                <p class="lead">Already have an account? <br><a href="#"#}
+{#                                                                                class="btn btn-lg btn-secondary">Log#}
+{#                                    in</a></p>#}
+{#                            </div>#}
+{#                            <div class="col-lg-6">#}
+{#                                <p class="lead"> Do not have an account? <br>#}
+{#                                    <a href="#" class="btn btn-lg btn-secondary">Register</a>#}
+{#                                </p>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                {% endif %}#}
+            </div>
+         </div>
+      </div>
+
+
+
+{% endblock %}

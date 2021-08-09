@@ -1,0 +1,29 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+
+    <h3 class='text-center'>die Zehn schönsten Bergorte in Bulgarien</h3>
+
+    <div class="row">
+        {% for beach in beaches %}
+            <div class="col-lg-4">
+                <h5 class="card-title">{{ beach.id }}. {{ beach.Name }}</h5>
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ beach.Bild.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">{{ beach.Bezeichnung }}</p>
+                        <a href="{{ beach.source.url }}" class="btn btn-primary">Mehr info</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <br>
+    {% if request.user.is_authenticated %}
+        <a class="btn btn-primary" href="{% url 'creat beach' %}">Erstellen Abenteuer  auf dem Meer</a>
+    {% else %}
+        <a class="btn btn-primary" href="{% url 'sign in' %}">Erschaffe ein Abenteuer auf dem Meer</a>
+    {% endif %}
+    </div>
+
+{% endblock %}
