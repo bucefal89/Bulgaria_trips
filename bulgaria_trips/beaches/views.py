@@ -40,13 +40,12 @@ def update_beaches(request, pk):
 
 
 def details_beaches(request, pk):
-    pass
-    # beach = Beach.objects.get(pk)
-    # context = {
-    #     'beaches': beach,
-    # }
-    #
-    # return render(request, 'beaches/details-beaches.html', context)
+    beach = Beach.objects.get(pk=pk)
+    context = {
+        'beach': beach,
+    }
+
+    return render(request, 'beaches/details-beaches.html', context)
 
 
 def delete_beaches(request, pk):

@@ -2,6 +2,21 @@
 
 {% block content %}
 
+    <div class="row">
+            <div class="col-lg-4">
+
+                <h5 class="card-title">{{ beach.id }}. {{ beach.Name }}</h5>
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ beach.Bild.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">{{ beach.Bezeichnung }}</p>
+                        <a href="{{ beach.source.url }}" class="btn btn-primary">Mehr info</a>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
 
 
 {% endblock %}

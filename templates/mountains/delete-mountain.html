@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'shared/base.html' %}
 
-</body>
-</html>
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <h1>Are you sure you want to delete {{ mountain.Name }}?</h1>
+    <form method="post" class="furniture-form" >
+        {% csrf_token %}
+        <br>
+        <button type="submit" class="btn btn-danger">Ja</button>
+        <a class="btn btn-primary" href="{% url 'details mountain' mountain.id %}">Nein, zurück</a>
+    </form>
+
+{% endblock %}

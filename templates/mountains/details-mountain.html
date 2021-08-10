@@ -1,0 +1,31 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+
+    <div class="row">
+            <div class="col-lg-4">
+
+                <h5 class="card-title">{{ mountain.id }}. {{ mountain.Name }}</h5>
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ mountain.Bild.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">{{ mountain.Bezeichnung }}</p>
+                        <a href="{{ mountain.source.url }}" class="btn btn-primary">Mehr info</a>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    {% if is_owner %}
+                        <a href="{% url 'update mountain' mountain.id %}" class="btn btn-success">aktualisieren</a>
+                        <a href="{% url 'delete mountain' mountain.id %}" class="btn btn-danger">Löschen</a>
+
+                    {% else %}
+                        {#<a href="{% url 'sign in' %}" class="btn btn-primary">aktualisieren</a>#}
+                    {% endif %}
+                </div>
+            </div>
+
+    </div>
+
+
+{% endblock %}

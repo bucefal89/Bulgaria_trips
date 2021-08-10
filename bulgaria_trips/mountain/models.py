@@ -12,7 +12,7 @@ class Source(models.Model):
     url = models.URLField()
 
     def __str__(self):
-        return self.name
+        return f"{self.url}, {self.name}"
 
 
 class Mountain(models.Model):
