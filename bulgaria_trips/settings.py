@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'bulgaria_trips.accounts',
     'bulgaria_trips.mountain',
     'bulgaria_trips.beaches',
+    'bulgaria_trips.top_places',
 
     'crispy_forms',
 ]

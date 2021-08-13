@@ -9,7 +9,7 @@
         {% csrf_token %}
         <br>
         <button type="submit" class="btn btn-danger">Ja</button>
-        <a class="btn btn-primary" href="{% url 'details beach' beach.id %}">Nein, zurück</a>
+        <a class="btn btn-success" href="{% url 'details beach' beach.id %}">Nein, zurück</a>
     </form>
 
 {% endblock %}

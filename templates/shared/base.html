@@ -25,7 +25,7 @@
                 <li><a class="nav-link" href="{% url 'index' %}">Home</a></li>
                 <li><a class="nav-link" href="{% url 'list mountains' %}">Berge</a></li>
                 <li><a class="nav-link" href="{% url 'all beaches' %}">Strände</a></li>
-                <li><a class="nav-link" href="#">Die besten 10</a></li>
+                <li><a class="nav-link" href="{% url 'list places' %}">Die besten 10</a></li>
             {% else %}
                 <li><a class="nav-link" href="{% url 'index' %}">Home</a></li>
                 <li><a class="nav-link" href="{% url 'list mountains' %}">Berge</a></li>
@@ -34,9 +34,6 @@
             </ul>
 
         <ul class="navbar-nav ml-auto">
-{#            <li class="nav-item">#}
-{#                <a class="nav-link" href="#">User</a>#}
-{#            </li>#}
             {% if request.user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'profile details' %}">{{ request.user }}</a>
@@ -53,8 +50,6 @@
                     <a class="nav-link" href="{% url 'sign up' %}">Sign up</a>
                 </li>
             {% endif %}
-{#            <li class="nav-item">#}
-{#                <a class="nav-link" href="#">Sign out</a>#}
             </li>
         </ul>
 
@@ -77,4 +72,11 @@
         integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
         crossorigin="anonymous"></script>
 </body>
+<br>
+</div>
+<br>
+<div class=" text-center card-footer footer bg-primary fixed-bottom">
+    Erstellt von Stiliyan Mitov
+</div>
+
 </html>
