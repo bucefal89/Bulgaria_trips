@@ -9,8 +9,8 @@ from bulgaria_trips.mountain.models import Mountain, Source
 class MountainCreatView(CreateView):
     model = Mountain
     template_name = 'mountains/create-mountain.html'
-    success_url = reverse_lazy('index')
-    fields = ['Name', 'Bezeichnung', 'Bild', 'Name', 'source']
+    success_url = reverse_lazy('list mountains')
+    fields = ['Name', 'Bezeichnung', 'Bild', 'Name', 'source', 'user']
 
 
 class MountainListView(ListView):

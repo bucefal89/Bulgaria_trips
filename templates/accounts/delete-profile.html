@@ -1,15 +1,13 @@
 {% extends 'shared/base.html' %}
 
-{% load crispy_forms_tags %}
-
 {% block content %}
 
-    <h1>Sind Sie sicher, dass Sie {{ beach.Name }} löschen möchten?</h1>
+    <h1>Sind Sie sicher, dass Sie Ihre Profile löschen möchten?</h1>
     <form method="post" class="furniture-form" >
         {% csrf_token %}
         <br>
         <button type="submit" class="btn btn-danger">Ja</button>
-        <a class="btn btn-primary" href="{% url 'details beach' beach.id %}">Nein, zurück</a>
+        <a class="btn btn-primary" href="{% url 'profile details' profile.id %}">Nein, zurück</a>
     </form>
 
 {% endblock %}

@@ -8,6 +8,9 @@ UserModel = get_user_model()
 class SourceBeaches(models.Model):
     url = models.URLField()
 
+    def __str__(self):
+        return self.url
+
 
 class Beach(models.Model):
     TYPE_CHOICE_BEACHES = 'Strände'

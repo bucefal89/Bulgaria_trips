@@ -5,13 +5,22 @@
     <div class="row">
             <div class="col-lg-4">
 
-                <h5 class="card-title">{{ beach.id }}. {{ beach.Name }}</h5>
+                <h5 class="card-title">{{ beach.Name }}</h5>
                 <div class="card" style="width: 18rem;">
                     <img src="{{ beach.Bild.url }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-text">{{ beach.Bezeichnung }}</p>
                         <a href="{{ beach.source.url }}" class="btn btn-primary">Mehr info</a>
                     </div>
+                </div>
+                <br>
+                <div>
+                    {% if is_owner %}
+                        <a href="{% url 'update beach' beach.id %}" class="btn btn-success">aktualisieren</a>
+                        <a href="{% url 'delete beach' beach.id %}" class="btn btn-danger">Löschen</a>
+                    {% else %}
+                        {#<a href="{% url 'sign in' %}" class="btn btn-primary">aktualisieren</a>#}
+                    {% endif %}
                 </div>
             </div>
 

@@ -2,6 +2,8 @@ from django import forms
 from django.contrib.auth import authenticate, get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
+
+from bulgaria_trips.accounts.models import Profile
 from bulgaria_trips.core.forms import BootstrapFormMixin
 
 
@@ -33,3 +35,11 @@ class SignUpForm(BootstrapFormMixin, UserCreationForm):
     class Meta:
         model = UserModel
         fields = ('email',)
+
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ('profile_image',)
+
+

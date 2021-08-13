@@ -21,19 +21,25 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-            <li><a class="nav-link" href="{% url 'index' %}">Home</a></li>
-            <li><a class="nav-link" href="{% url 'list mountains' %}">Berge</a></li>
-            <li><a class="nav-link" href="{% url 'all beaches' %}">Strände</a></li>
-            <li><a class="nav-link" href="#">Die besten 10</a></li>
+            {% if request.user.is_authenticated %}
+                <li><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+                <li><a class="nav-link" href="{% url 'list mountains' %}">Berge</a></li>
+                <li><a class="nav-link" href="{% url 'all beaches' %}">Strände</a></li>
+                <li><a class="nav-link" href="#">Die besten 10</a></li>
+            {% else %}
+                <li><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+                <li><a class="nav-link" href="{% url 'list mountains' %}">Berge</a></li>
+                <li><a class="nav-link" href="{% url 'all beaches' %}">Strände</a></li>
+            {% endif %}
             </ul>
 
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">User</a>
-            </li>
+{#            <li class="nav-item">#}
+{#                <a class="nav-link" href="#">User</a>#}
+{#            </li>#}
             {% if request.user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="url to profile">{{ request.user }}</a>
+                    <a class="nav-link" href="{% url 'profile details' %}">{{ request.user }}</a>
                 </li>
                 <li>
                     <a class="nav-link" href="{% url 'sign out' %}">Sign out</a>

@@ -1,10 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'shared/base.html' %}
+{% load static %}
 
-</body>
-</html>
+{% block content %}
+
+    <hr>
+<div class="container bootstrap snippet">
+    <div class="row">
+  		<div class="col-sm-10"><h1>{{ request.user }}</h1></div>
+        <div class="col-sm-2"><a href="#" class="pull-right"><button type="button" class="btn btn-danger">Profil löschen</button></a></div>
+    </div>
+    <div class="row">
+  		<div class="col-sm-3">
+      <div class="text-center">
+          {% if profile.profile_image %}
+            <img class="avatar img-circle img-thumbnail" src="{{ profile.profile_image.url }}" alt="" width="140" height="140">
+          {% else %}
+              <img class="avatar img-circle img-thumbnail" src="{% static 'images/profile/anonymous_profile.jpg' %}" alt="" width="140" height="140">
+          {% endif %}
+          <div class="tab-content">
+              <div class="tab-pane active" id="home">
+
+                  <form class="form" action="{% url 'profile details' %}" method="post" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      {{ form }}
+                      <div>
+                          <br>
+                          <button class="btn btn-success ml-auto">aktualisieren</button>
+                      </div>
+
+                </form>
+
+            </div>
+          </div>
+
+    </div>
+
+
+{% endblock %}
