@@ -24,5 +24,5 @@ python manage.py runserver # starts the server
 * psycopg2-binary 2.9.1
 
 
-Please see [requirements.txt]() for more information
+Please see [requirements.txt](https://github.com/bucefal89/Bulgaria_trips/blob/main/requerments.txt) for more information
 
