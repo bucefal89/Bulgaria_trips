@@ -23,4 +23,6 @@ python manage.py runserver # starts the server
 * Pillow 8.3.1
 * psycopg2-binary 2.9.1
 
+
 Please see [requirements.txt]() for more information
+
