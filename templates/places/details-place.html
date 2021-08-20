@@ -1,0 +1,32 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <h4>{{ place.Name }}</h4>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="imgAbt">
+                    <img width="300" height="220" src="{{ place.Bild.url }}" class="card-img-top" alt="..."/>
+                </div>
+                <br>
+        <div>
+            {% if is_owner %}
+                <a href="{% url 'update place' place.id %}" class="btn btn-success">aktualisieren</a>
+                <a href="{% url 'delete place' place.id %}" class="btn btn-danger">Löschen</a>
+
+            {% else %}
+                {#<a href="{% url 'sign in' %}" class="btn btn-primary">aktualisieren</a>#}
+            {% endif %}
+        </div>
+            </div>
+            <div class="col-md-8">
+                <b>Bezeichnung:</b>
+                <p>{{ place.Bezeichnung }}</p>
+{#                <a href="https://en.wikipedia.org/wiki/Bulgar_calendar">Mehr Info</a>#}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

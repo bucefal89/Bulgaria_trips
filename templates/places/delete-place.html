@@ -1,0 +1,14 @@
+{% extends 'shared/base.html' %}
+
+
+{% block content %}
+
+    <h1>Sind Sie sicher, dass Sie {{ place.Name }} löschen möchten?</h1>
+    <form method="post" class="furniture-form" >
+        {% csrf_token %}
+        <br>
+        <button type="submit" class="btn btn-danger">Ja</button>
+        <a class="btn btn-success" href="{% url 'details place' place.id %}">Nein, zurück</a>
+    </form>
+
+{% endblock %}
