@@ -10,3 +10,5 @@ media
 .env
 .idea
 .DS_Store
+#.idea
+#.DS_Store
